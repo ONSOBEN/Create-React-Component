@@ -1,7 +1,10 @@
+const handleImageError = (event) => {
+  event.target.src = 'https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM='; // Set the default image URL
+};
 const Card = ({ title, image, price}) => {
   return (
     <div className="max-w-sm">
-      <img src={image} alt={title} />
+      <img src={image} onError={handleImageError} alt={title} />
       <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
         {title}
       </h5>
